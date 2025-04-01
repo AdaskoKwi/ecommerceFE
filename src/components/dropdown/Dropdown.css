@@ -1,0 +1,22 @@
+.dropdown {
+    background: hsl(0, 0%, 15%);
+    position: absolute;
+    padding: 10px;
+    top: 55px;
+    right: 0;
+    border: 1px solid hsl(0, 0%, 35%);
+    border-radius: 10px;
+}
+
+.dropdown-item{
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 8px;
+    transition: .2s ease;
+}
+
+.dropdown-item:hover {
+    transition: .2s ease;
+    cursor: pointer;
+    background: hsl(0, 0%, 25%);
+}
