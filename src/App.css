@@ -84,27 +84,13 @@ main {
     align-content: center;
 }
 
-.newest-product-wrapper {
-    margin: 20px 10px 10px 20px;
-    padding: 20px;
-    border: none;
-    border-radius: 15px;
-    background: hsl(0, 0%, 15%);
-}
-
-.newest-product-container {
-    display: flex;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
 .container-label {
     padding-left: 10px;
 }
 
 .top-8-container-wrapper {
     width: auto;
-    margin: 20px 20px 10px 20px;
+    margin: 20px 60px 10px 20px;
     padding: 20px;
     border: none;
     border-radius: 15px;

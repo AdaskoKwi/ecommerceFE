@@ -1,0 +1,46 @@
+.newest-product-wrapper {
+    margin: 20px 10px 10px 60px;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    background: hsl(0, 0%, 15%);
+}
+
+.newest-product-container {
+    display: flex;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.newest-product img {
+    width: 400px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+}
+
+.newest-product-label {
+    display: grid;
+}
+
+.newest-product-label p {
+    font-size: 25px;
+}
+
+.newest-product-label button {
+    width: auto;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: black;
+    background: hsl(0, 0%, 95%);
+    font-size: 20px;
+    transition: .2s ease;
+}
+
+.newest-product-label button:hover {
+    background: hsl(0, 0%, 75%);
+    transition: .2s ease;
+    cursor: pointer;
+}

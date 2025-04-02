@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import ProductCard from "./components/productCard/ProductCard.jsx";
 import Dropdown from "./components/dropdown/Dropdown.jsx";
 import './App.css'
+import NewestProductCard from "./components/newestProductCard/NewestProductCard.jsx";
 
 
 const App = () => {
@@ -62,25 +63,20 @@ const App = () => {
                 </div>
             </header>
             <main>
-                <div className="newest-product-wrapper">
-                    <div className="container-label">
-                        <h2>Najnowsza oferta</h2>
-                    </div>
-                    <div className="newest-product-container">
-                        {productList.length > 0 ? (
-                            <ProductCard product={productList.pop()}/>
-                        ) : (
-                            ''
-                        )}
-                    </div>
-                </div>
+                {productList.length > 0 ? (
+                    <NewestProductCard
+                        product={productList.pop()}
+                    />
+                ) : (
+                    ''
+                )}
                 <div className="top-8-container-wrapper">
                     <div className="container-label">
                         <h2>Hity tygodnia</h2>
                     </div>
                     <div className="top-8-product-container">
                         {topEightList.length > 0 ? (
-                            topEightList.map((product, index) => (
+                            topEightList.map((product) => (
 
                                 <ProductCard product={product}/>
                             ))
