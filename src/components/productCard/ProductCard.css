@@ -29,7 +29,7 @@
 .top-8-product-container .product:hover {
     transition: .2s ease;
     cursor: pointer;
-    box-shadow: 0 0 5px 8px hsl(0, 0%, 10%);
+    box-shadow: 0 0 5px 8px hsl(0, 0%, 5%);
 }
 
 .top-8-product-container .product img {

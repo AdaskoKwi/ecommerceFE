@@ -27,7 +27,7 @@
     font-size: 25px;
 }
 
-.newest-product-label button {
+.newest-product button {
     width: auto;
     height: 45px;
     border: none;
@@ -39,7 +39,7 @@
     transition: .2s ease;
 }
 
-.newest-product-label button:hover {
+.newest-product button:hover {
     background: hsl(0, 0%, 75%);
     transition: .2s ease;
     cursor: pointer;

@@ -19,7 +19,7 @@ const NewestProductCard = ({product : {name, price, quantity}}) => {
                                 <p>{name}</p>
                                 <p>Pozostało: {quantity}</p>
                                 <p>{price} zł</p>
-                                <button>🛒 Kup Teraz</button>
+                                <button>🛒 Dodaj do koszyka</button>
                             </div>
                         </div>
                     ) : (
