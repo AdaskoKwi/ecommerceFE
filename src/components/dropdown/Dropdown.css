@@ -1,11 +1,12 @@
 .dropdown {
     background: hsl(0, 0%, 15%);
-    position: absolute;
+    position: fixed !important;
     padding: 10px;
     top: 55px;
-    right: 0;
+    right: 450px;
     border: 1px solid hsl(0, 0%, 35%);
     border-radius: 10px;
+    z-index: 1000 !important;
 }
 
 .dropdown-item{

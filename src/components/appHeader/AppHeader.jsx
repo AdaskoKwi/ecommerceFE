@@ -32,7 +32,8 @@ const AppHeader = () => {
                 </div>
 
                 <div className="header-buttons">
-
+                    <button>🤍</button>
+                    <button>🛒</button>
                 </div>
             </header>
         </div>

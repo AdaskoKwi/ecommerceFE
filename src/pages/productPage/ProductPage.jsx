@@ -33,29 +33,31 @@ const ProductPage = () => {
         <div>
             <AppHeader/>
 
-            <div className="product-page-wrapper">
-                <div className="product-page-container">
-                    <div className="product-image">
-                        <img src="/src/assets/test.webp" alt="test"/>
-                    </div>
-                    <div className="product-info">
-                        <h1>{product.name}</h1>
-                        <p>{product.description}</p>
-                        {product.quantity > 0 ? (
-                            <div className="in-stock">
-                                <p>✅ Przedmiot jest dostępny, pozostało {product.quantity} sztuk</p>
+            <main className={"product-page-main"}>
+                <div className="product-page-wrapper">
+                    <div className="product-page-container">
+                        <div className="product-image">
+                            <img src="/src/assets/test.webp" alt="test"/>
+                        </div>
+                        <div className="product-info">
+                            <h1>{product.name}</h1>
+                            <p>{product.description}</p>
+                            {product.quantity > 0 ? (
+                                <div className="in-stock">
+                                    <p>✅ Przedmiot jest dostępny, pozostało {product.quantity} sztuk</p>
+                                </div>
+                            ) : (
+                                <div className="out-of-stock">
+                                    <p>❌ Przedmiot nie jest dostępny</p>
+                                </div>
+                            )}
+                            <div className={"add-to-cart"}>
+                                <button>🛒 Dodaj do koszyka</button>
                             </div>
-                        ) : (
-                            <div className="out-of-stock">
-                                <p>❌ Przedmiot nie jest dostępny</p>
-                            </div>
-                        )}
-                        <div className={"add-to-cart"}>
-                            <button>🛒 Dodaj do koszyka</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
     )
 }

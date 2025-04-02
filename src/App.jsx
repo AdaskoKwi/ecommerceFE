@@ -62,7 +62,7 @@ const App = () => {
                                 </Link>
                             ))
                         ) : (
-                            <h3>Brak produktów do wyświetlenie</h3>
+                            <h3>Brak produktów do wyświetlenia</h3>
                         )}
                     </div>
                 </div>
