@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useParams} from "react-router-dom";
 import AppHeader from "../../components/appHeader/AppHeader.jsx";
 import './ProductPage.css';
+import getMockImagePath from "../../functions/MockImages.jsx";
 
 const ProductPage = () => {
     const [product, setProduct] = useState({})
@@ -37,7 +38,7 @@ const ProductPage = () => {
                 <div className="product-page-wrapper">
                     <div className="product-page-container">
                         <div className="product-image">
-                            <img src="/src/assets/test.webp" alt="test"/>
+                            <img src={getMockImagePath(product.category)} alt="test"/>
                         </div>
                         <div className="product-info">
                             <h1>{product.name}</h1>

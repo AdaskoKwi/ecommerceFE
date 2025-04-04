@@ -4,7 +4,7 @@ import ProductCard from "./components/productCard/ProductCard.jsx";
 import './App.css'
 import NewestProductCard from "./components/newestProductCard/NewestProductCard.jsx";
 import AppHeader from "./components/appHeader/AppHeader.jsx";
-
+import getMockImagePath from "./functions/MockImages.jsx";
 
 const App = () => {
     const [productList, setProductList] = useState([]);
@@ -26,7 +26,7 @@ const App = () => {
 
             setProductList(data);
             setTopEightList(data.slice(0, 8));
-            setNewestProduct(data.pop());
+            setNewestProduct(data[0]);
         } catch (error) {
             console.error(error);
         }
@@ -38,13 +38,16 @@ const App = () => {
 
     return (
         <div className={"app-container"}>
-            <AppHeader/>
+            <AppHeader
+                productList={productList}
+            />
 
             <main>
                 {productList.length > 0 ? (
                     <Link to={`/product/${newestProduct.id}`}>
                         <NewestProductCard
                             product={newestProduct}
+                            imagePath={getMockImagePath(newestProduct.category)}
                         />
                     </Link>
                 ) : (
@@ -58,7 +61,10 @@ const App = () => {
                         {topEightList.length > 0 ? (
                             topEightList.map((product) => (
                                 <Link to={`/product/${product.id}`}>
-                                    <ProductCard product={product}/>
+                                    <ProductCard
+                                        product={product}
+                                        imagePath={getMockImagePath(product.category)}
+                                    />
                                 </Link>
                             ))
                         ) : (

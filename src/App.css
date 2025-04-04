@@ -8,6 +8,11 @@ main {
     padding-left: 10px;
 }
 
+.contact {
+    width: auto;
+    height: auto;
+}
+
 .top-8-container-wrapper {
     width: auto;
     margin: 20px 60px 10px 20px;
