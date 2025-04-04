@@ -15,6 +15,10 @@ main {
     background: hsl(0, 0%, 15%);
 }
 
+.search-list-label h1{
+    padding-top: 20px;
+}
+
 .search-list-container {
     display: grid;
     grid-template-columns: 200px 200px 200px 200px 200px 200px;

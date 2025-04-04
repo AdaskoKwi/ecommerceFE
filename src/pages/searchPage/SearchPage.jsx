@@ -48,7 +48,14 @@ const SearchPage = () => {
             <main>
                 <div className="search-list-wrapper">
                     <div className="search-list-label">
-                        <h2>Wyniki wyszukiwania</h2>
+                        {queriedProductList.length > 0 ? (
+                            <h2>Wyniki wyszukiwania</h2>
+                        ) : (
+                            <h1>Brak wyników wyszukiwania
+                                dla: "{location.state.searchTerm}" w
+                                kategorii: {location.state.category}
+                            </h1>
+                        )}
                     </div>
                     <div className="search-list-container">
                         {queriedProductList.length > 0 ? (
@@ -61,7 +68,7 @@ const SearchPage = () => {
                                 </Link>
                             ))
                         ) : (
-                            <h1>Brak wyników wyszukiwania dla: {location.state.searchTerm} w kategorii: {location.state.category}</h1>
+                            ''
                         )}
                     </div>
                 </div>
