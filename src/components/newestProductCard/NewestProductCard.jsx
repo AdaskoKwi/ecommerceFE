@@ -1,7 +1,7 @@
 import React from 'react'
 import './NewestProductCard.css';
 
-const NewestProductCard = ({product : {name, price, quantity}}) => {
+const NewestProductCard = ({product : {name, price, quantity}, imagePath}) => {
     return (
         <div className="newest-product-wrapper">
             <div className="container-label">
@@ -12,14 +12,14 @@ const NewestProductCard = ({product : {name, price, quantity}}) => {
                     {typeof name !== 'undefined' ? (
                         <div>
                             <div>
-                                <img src="/src/assets/test.webp" alt="test"/>
+                                <img src={imagePath} alt={name}/>
                             </div>
 
                             <div className={"newest-product-label"}>
                                 <p>{name}</p>
                                 <p>Pozostało: {quantity}</p>
                                 <p>{price} zł</p>
-                                <button>🛒 Kup Teraz</button>
+                                <button>🛒 Dodaj do koszyka</button>
                             </div>
                         </div>
                     ) : (

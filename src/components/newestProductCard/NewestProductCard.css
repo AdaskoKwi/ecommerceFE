@@ -14,9 +14,16 @@
 
 .newest-product img {
     width: 400px;
-    padding: 10px;
+    margin: 10px;
     border: none;
     border-radius: 20px;
+    transition: .2s ease;
+}
+
+.newest-product img:hover {
+    transition: .2s ease;
+    transform: scale(1.025);
+    box-shadow: 0 0 5px 10px hsl(0, 0%, 5%);
 }
 
 .newest-product-label {
@@ -25,9 +32,11 @@
 
 .newest-product-label p {
     font-size: 25px;
+    margin-top: 2px;
 }
 
-.newest-product-label button {
+.newest-product button {
+    margin-top: 30px;
     width: auto;
     height: 45px;
     border: none;
@@ -39,7 +48,7 @@
     transition: .2s ease;
 }
 
-.newest-product-label button:hover {
+.newest-product button:hover {
     background: hsl(0, 0%, 75%);
     transition: .2s ease;
     cursor: pointer;

@@ -1,17 +1,16 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import {Link} from "react-router-dom";
 import ProductCard from "./components/productCard/ProductCard.jsx";
-import Dropdown from "./components/dropdown/Dropdown.jsx";
 import './App.css'
 import NewestProductCard from "./components/newestProductCard/NewestProductCard.jsx";
-
+import AppHeader from "./components/appHeader/AppHeader.jsx";
+import getMockImagePath from "./functions/MockImages.jsx";
 
 const App = () => {
     const [productList, setProductList] = useState([]);
     const [topEightList, setTopEightList] = useState([]);
-    const [showDropdown, setShowDropdown] = useState(false);
-    const [currentCategory, setCurrentCategory] = useState('Wszystko');
+    const [newestProduct, setNewestProduct] = useState(null);
 
-    const categoryList = ['Wszystko', 'Laptopy i komputery', 'Smartfony i smartwatche', 'Podzespoły komputerowe'];
     const BASE_API_URL = 'http://localhost:8080/api/v1/products'
 
     const getProducts = async () => {
@@ -27,46 +26,30 @@ const App = () => {
 
             setProductList(data);
             setTopEightList(data.slice(0, 8));
+            setNewestProduct(data[0]);
         } catch (error) {
             console.error(error);
         }
     }
 
-    getProducts();
-
-    // useEffect(() => {
-    //     getProducts();
-    // }, []);
+    useEffect(() => {
+        getProducts();
+    }, []);
 
     return (
         <div className={"app-container"}>
-            <header>
-                <h1>E-Commerce</h1>
+            <AppHeader
+                productList={productList}
+            />
 
-                <div className="header-input">
-                    <input type="text" placeholder={"Czego szukasz?"}/>
-                    <button className={"category-button"} onClick={() => setShowDropdown(!showDropdown)}>
-                        {currentCategory} &#9662;
-                    </button>
-                    <Dropdown
-                        showDropdown={showDropdown}
-                        categoryList={categoryList}
-                        setCategory={setCurrentCategory}
-                        setDropdownVisibility={setShowDropdown}
-                        dropdownVisibility={showDropdown}
-                    />
-                    <button className={"search-button"}>🔍</button>
-                </div>
-
-                <div className="header-buttons">
-
-                </div>
-            </header>
             <main>
                 {productList.length > 0 ? (
-                    <NewestProductCard
-                        product={productList.pop()}
-                    />
+                    <Link to={`/product/${newestProduct.id}`}>
+                        <NewestProductCard
+                            product={newestProduct}
+                            imagePath={getMockImagePath(newestProduct.category)}
+                        />
+                    </Link>
                 ) : (
                     ''
                 )}
@@ -77,11 +60,15 @@ const App = () => {
                     <div className="top-8-product-container">
                         {topEightList.length > 0 ? (
                             topEightList.map((product) => (
-
-                                <ProductCard product={product}/>
+                                <Link to={`/product/${product.id}`}>
+                                    <ProductCard
+                                        product={product}
+                                        imagePath={getMockImagePath(product.category)}
+                                    />
+                                </Link>
                             ))
                         ) : (
-                            <h3>Brak produktów do wyświetlenie</h3>
+                            <h3>Brak produktów do wyświetlenia</h3>
                         )}
                     </div>
                 </div>
