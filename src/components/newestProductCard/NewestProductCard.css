@@ -4,6 +4,41 @@
     border: none;
     border-radius: 15px;
     background: hsl(0, 0%, 15%);
+    position: relative;
+}
+
+.newest-product-wrapper::after, .newest-product-wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), hsl(0, 100%, 20%), darkred, red);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 2px;
+    border-radius: 15px;
+    z-index: -1;
+    animation: 4s spin linear infinite;
+}
+
+.newest-product-wrapper::before {
+    filter: blur(.4rem);
+    opacity: .5;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg
+    } to {
+        --angle: 360deg
+          }
 }
 
 .newest-product-container {
