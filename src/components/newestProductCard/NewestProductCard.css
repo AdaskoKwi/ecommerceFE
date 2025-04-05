@@ -1,5 +1,5 @@
 .newest-product-wrapper {
-    margin: 20px 10px 10px 60px;
+    margin: 0 0 0 100px;
     padding: 20px;
     border: none;
     border-radius: 15px;
@@ -48,7 +48,7 @@
 }
 
 .newest-product img {
-    width: 400px;
+    width: 320px;
     margin: 10px;
     border: none;
     border-radius: 20px;
