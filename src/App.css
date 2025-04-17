@@ -23,8 +23,9 @@ main {
 }
 
 .top-8-product-container {
+    padding: 0 10px 5px 10px;
     display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 20px;
     gap: 10px 10px;
 }

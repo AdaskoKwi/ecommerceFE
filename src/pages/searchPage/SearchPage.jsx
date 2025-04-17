@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './SearchPage.css';
-import {Link, useLocation, useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import AppHeader from "../../components/appHeader/AppHeader.jsx";
 import ProductCard from "../../components/productCard/ProductCard.jsx";
 import getMockImagePath from "../../functions/MockImages.jsx";
@@ -10,11 +10,11 @@ const SearchPage = () => {
     const { url } = useParams()
     const location = useLocation();
 
-    const BASE_API_URL = 'http://localhost:8080/api/v1/products'
+    const BASE_PRODUCT_API_URL = 'http://localhost:8080/api/v1/products'
 
     const fetchSearchByTermAndCategory = async () => {
         try {
-            const response = await fetch(BASE_API_URL + `/search`, {
+            const response = await fetch(BASE_PRODUCT_API_URL + `/search`, {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -60,12 +60,10 @@ const SearchPage = () => {
                     <div className="search-list-container">
                         {queriedProductList.length > 0 ? (
                             queriedProductList.map((product) => (
-                                <Link to={`/product/${product.id}`}>
-                                    <ProductCard
-                                        product={product}
-                                        imagePath={getMockImagePath(product.category)}
-                                    />
-                                </Link>
+                                <ProductCard
+                                    product={product}
+                                    imagePath={getMockImagePath(product.category)}
+                                />
                             ))
                         ) : (
                             ''
