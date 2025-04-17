@@ -1,22 +1,22 @@
-.dropdown {
+.category-dropdown {
     background: hsl(0, 0%, 15%);
     position: fixed !important;
     padding: 10px;
     top: 55px;
-    right: 450px;
+    right: 485px;
     border: 1px solid hsl(0, 0%, 35%);
     border-radius: 10px;
     z-index: 1000 !important;
 }
 
-.dropdown-item{
+.category-dropdown-item{
     padding: 5px 10px 5px 10px;
     border: none;
     border-radius: 8px;
     transition: .2s ease;
 }
 
-.dropdown-item:hover {
+.category-dropdown-item:hover {
     transition: .2s ease;
     cursor: pointer;
     background: hsl(0, 0%, 25%);

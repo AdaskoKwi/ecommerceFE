@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import {Link} from "react-router-dom";
 import ProductCard from "./components/productCard/ProductCard.jsx";
 import './App.css'
 import NewestProductCard from "./components/newestProductCard/NewestProductCard.jsx";
@@ -11,11 +10,11 @@ const App = () => {
     const [topEightList, setTopEightList] = useState([]);
     const [newestProduct, setNewestProduct] = useState(null);
 
-    const BASE_API_URL = 'http://localhost:8080/api/v1/products'
+    const BASE_PRODUCT_API_URL = 'http://localhost:8080/api/v1/products'
 
     const getProducts = async () => {
         try {
-            const response = await fetch(BASE_API_URL, {
+            const response = await fetch(BASE_PRODUCT_API_URL, {
                 method: 'GET'
             });
 
@@ -44,12 +43,10 @@ const App = () => {
 
             <main>
                 {productList.length > 0 ? (
-                    <Link to={`/product/${newestProduct.id}`}>
-                        <NewestProductCard
-                            product={newestProduct}
-                            imagePath={getMockImagePath(newestProduct.category)}
-                        />
-                    </Link>
+                    <NewestProductCard
+                        product={newestProduct}
+                        imagePath={getMockImagePath(newestProduct.category)}
+                    />
                 ) : (
                     ''
                 )}
@@ -60,12 +57,10 @@ const App = () => {
                     <div className="top-8-product-container">
                         {topEightList.length > 0 ? (
                             topEightList.map((product) => (
-                                <Link to={`/product/${product.id}`}>
-                                    <ProductCard
-                                        product={product}
-                                        imagePath={getMockImagePath(product.category)}
-                                    />
-                                </Link>
+                                <ProductCard
+                                    product={product}
+                                    imagePath={getMockImagePath(product.category)}
+                                />
                             ))
                         ) : (
                             <h3>Brak produktów do wyświetlenia</h3>
