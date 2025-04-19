@@ -19,6 +19,7 @@ const CartDropdown = ({cartItems, dropdownVisibility, setDropdownVisibility, dat
                                     dataChanged={dataChanged}
                                     setDataChanged={setDataChanged}
                                     cartItemId={cartItem.id}
+                                    amountInCart={cartItem.amountInCart}
                                 />
                             ))
 

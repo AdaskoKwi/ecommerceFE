@@ -2,7 +2,7 @@ import React from 'react'
 import './NewestProductCard.css';
 import {Link} from "react-router-dom";
 
-const NewestProductCard = ({product, imagePath}) => {
+const NewestProductCard = ({product, imagePath, dataChanged, setDataChanged}) => {
     const BASE_CART_API_URL = 'http://localhost:8080/api/v1/cart'
 
     const addProductToCart = async () => {
@@ -14,16 +14,16 @@ const NewestProductCard = ({product, imagePath}) => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    product: product,
-                    amountInCart: 1 // TODO FIX AMOUNT ADDED
+                    product: product
                 })
             })
 
             if (!response.ok) {
                 console.error("Couldn't upload a product to cart.")
-            } else {
-                console.log("Added product to cart.")
             }
+
+            console.log("Added product to cart.")
+            setDataChanged(!dataChanged);
         } catch (error) {
             console.error(error);
         }

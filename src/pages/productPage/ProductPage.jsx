@@ -5,6 +5,7 @@ import './ProductPage.css';
 import getMockImagePath from "../../functions/MockImages.jsx";
 
 const ProductPage = () => {
+    const [dataChanged, setDataChanged] = useState(false);
     const [product, setProduct] = useState({})
     const { id } = useParams();
 
@@ -36,16 +37,16 @@ const ProductPage = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    product: product,
-                    amountInCart: 1 // TODO FIX AMOUNT ADDED
+                    product: product
                 })
             })
 
             if (!response.ok) {
                 console.error("Couldn't upload a product to cart.")
-            } else {
-                console.log("Added product to cart.")
             }
+
+            console.log("Added product to cart.")
+            setDataChanged(!dataChanged);
         } catch (error) {
             console.error(error);
         }
@@ -57,7 +58,10 @@ const ProductPage = () => {
 
     return (
         <div>
-            <AppHeader/>
+            <AppHeader
+                dataChanged={dataChanged}
+                setDataChanged={setDataChanged}
+            />
 
             <main className={"product-page-main"}>
                 <div className="product-page-wrapper">

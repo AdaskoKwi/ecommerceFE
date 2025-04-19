@@ -26,6 +26,19 @@
     padding-left: 20px;
 }
 
+.cart-product .cart-product-text {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cart-product .cart-product-amount {
+    position: absolute;
+    top: 30px;
+}
+
+
 .cart-product .delete-cartItem-button {
     display: flex;
     justify-content: center;

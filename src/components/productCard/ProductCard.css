@@ -85,15 +85,17 @@
     right: 10px;
     width: 35px;
     height: 35px;
-    background: hsl(0, 0%, 95%);
+    background: transparent;
     border-radius: 8px;
-    border: none;
+    border: 1px solid forestgreen;
     font-size: 1.1em;
+    color: forestgreen;
     transition: .2s ease;
 }
 
 .product button:hover {
     cursor: pointer;
-    background: hsl(0, 0%, 75%);
+    border: 1px solid hsl(120, 61%, 44%);
+    background: hsl(120, 61%, 15%);
     transition: .2s ease;
 }
