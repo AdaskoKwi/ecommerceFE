@@ -6,6 +6,7 @@ import ProductCard from "../../components/productCard/ProductCard.jsx";
 import getMockImagePath from "../../functions/MockImages.jsx";
 
 const SearchPage = () => {
+    const [dataChanged, setDataChanged] = useState(false);
     const [queriedProductList, setQueriedProductList] = useState([]);
     const { url } = useParams()
     const location = useLocation();
@@ -43,7 +44,10 @@ const SearchPage = () => {
 
     return (
         <div>
-            <AppHeader/>
+            <AppHeader
+                dataChanged={dataChanged}
+                setDataChanged={setDataChanged}
+            />
 
             <main>
                 <div className="search-list-wrapper">
@@ -63,6 +67,8 @@ const SearchPage = () => {
                                 <ProductCard
                                     product={product}
                                     imagePath={getMockImagePath(product.category)}
+                                    dataChanged={dataChanged}
+                                    setDataChanged={setDataChanged}
                                 />
                             ))
                         ) : (

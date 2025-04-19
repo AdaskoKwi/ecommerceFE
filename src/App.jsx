@@ -6,6 +6,7 @@ import AppHeader from "./components/appHeader/AppHeader.jsx";
 import getMockImagePath from "./functions/MockImages.jsx";
 
 const App = () => {
+    const [dataChanged, setDataChanged] = useState(false);
     const [productList, setProductList] = useState([]);
     const [topEightList, setTopEightList] = useState([]);
     const [newestProduct, setNewestProduct] = useState(null);
@@ -39,6 +40,8 @@ const App = () => {
         <div className={"app-container"}>
             <AppHeader
                 productList={productList}
+                dataChanged={dataChanged}
+                setDataChanged={setDataChanged}
             />
 
             <main>
@@ -46,6 +49,8 @@ const App = () => {
                     <NewestProductCard
                         product={newestProduct}
                         imagePath={getMockImagePath(newestProduct.category)}
+                        dataChanged={dataChanged}
+                        setDataChanged={setDataChanged}
                     />
                 ) : (
                     ''
@@ -60,6 +65,8 @@ const App = () => {
                                 <ProductCard
                                     product={product}
                                     imagePath={getMockImagePath(product.category)}
+                                    dataChanged={dataChanged}
+                                    setDataChanged={setDataChanged}
                                 />
                             ))
                         ) : (

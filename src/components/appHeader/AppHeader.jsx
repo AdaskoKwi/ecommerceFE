@@ -4,12 +4,11 @@ import CategoryDropdown from "../categoryDropdown/CategoryDropdown.jsx";
 import './AppHeader.css';
 import CartDropdown from "../cartDropdown/CartDropdown.jsx";
 
-const AppHeader = () => {
+const AppHeader = ({dataChanged, setDataChanged}) => {
     const [showCartDropdown, setShowCartDropdown] = useState(false);
     const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
     const [currentCategory, setCurrentCategory] = useState('Wszystko');
     const [searchTerm, setSearchTerm] = useState('');
-    const [dataChanged, setDataChanged] = useState(false);
     const [cartItems, setCartItems] = useState([]);
 
     const categoryList = ['Wszystko', 'Laptopy i komputery', 'Smartfony i smartwatche', 'Podzespoły komputerowe'];
@@ -35,9 +34,11 @@ const AppHeader = () => {
         }
     }
 
+    console.log(cartItems)
+
     useEffect(() => {
         getCartItems();
-    }, [showCartDropdown, dataChanged, cartItems]);
+    }, [showCartDropdown, dataChanged]);
 
     return (
         <div className={"header-div"}>
