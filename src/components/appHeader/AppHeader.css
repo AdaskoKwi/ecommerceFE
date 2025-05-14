@@ -20,6 +20,7 @@ header h1 {
     padding-left: 30px;
     cursor: pointer;
     transition: .2s ease;
+    white-space: nowrap;
 }
 
 header h1:hover {
