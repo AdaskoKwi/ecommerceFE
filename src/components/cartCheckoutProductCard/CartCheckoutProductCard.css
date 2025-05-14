@@ -1,0 +1,106 @@
+.cart-checkout-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40em;
+    height: 8em;
+    /*border: 1px solid red;*/
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background: hsl(0, 0%, 15%);
+    transition: .2s ease;
+    padding: 5px 20px 5px 20px;
+}
+
+.cart-checkout-product img {
+    border-radius: 5px;
+    width: 95px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.cart-checkout-product p {
+    width: 50%;
+    text-align: left;
+    white-space: nowrap;
+    padding-left: 8px;
+}
+
+.cart-checkout-product .delete-button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease;
+    background: transparent;
+    font-size: 1.2em;
+}
+
+.cart-checkout-product .delete-button:hover {
+    cursor: pointer;
+    background: hsl(0, 0%, 30%);
+}
+
+.cart-checkout-product .amount-dropdown-button {
+    width: 4em;
+    height: 2em;
+    border: 1px solid hsl(0, 0%, 36%);
+    border-radius: 5px;
+    background: transparent;
+    transition: .2s ease;
+}
+
+.cart-checkout-product .amount-dropdown-button:hover {
+    cursor: pointer;
+    transition: .2s ease;
+    background: hsl(0, 0%, 20%);
+    border: 1px solid hsl(0, 0%, 50%);
+}
+
+.cart-checkout-product .cart-checkout-product-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cart-checkout-product .cart-checkout-product-buttons .plus-minus-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 27px;
+    background: transparent;
+    border: 1px solid hsl(0, 0%, 36%);
+    border-radius: 5px;
+    transition: .2s ease;
+}
+
+.cart-checkout-product .cart-checkout-product-buttons .plus-minus-button:hover {
+    cursor: pointer;
+    transition: .2s ease;
+    background: hsl(0, 0%, 20%);
+    border: 1px solid hsl(0, 0%, 50%);
+}
+
+.cart-checkout-product:hover {
+    transition: .2s ease;
+    cursor: pointer;
+    box-shadow: 0 0 5px 8px hsl(0, 0%, 5%);
+}
+
+.cart-checkout-product .cart-checkout-product-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3px;
+    border-radius: 5px;
+    border: 1px solid hsl(0, 0%, 36%);
+    padding: 3px;
+}

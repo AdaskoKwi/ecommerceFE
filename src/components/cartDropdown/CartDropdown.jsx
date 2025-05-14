@@ -2,6 +2,7 @@ import React from 'react'
 import '/src/components/cartDropdown/CartDropdown.css'
 import CartProduct from "../cartProduct/CartProduct.jsx";
 import getMockImagePath from "../../functions/MockImages.jsx";
+import {Link} from "react-router-dom";
 
 const CartDropdown = ({cartItems, dropdownVisibility, setDropdownVisibility, dataChanged, setDataChanged}) => {
     return (
@@ -30,8 +31,9 @@ const CartDropdown = ({cartItems, dropdownVisibility, setDropdownVisibility, dat
                         )}
                     </div>
 
-
-                    <button className={"go-to-cart-button"}>Przejdź do koszyka</button>
+                    <Link to={'/checkout'}>
+                        <button className={"go-to-cart-button"}>Przejdź do koszyka</button>
+                    </Link>
                 </div>
             ) : ''}
         </div>

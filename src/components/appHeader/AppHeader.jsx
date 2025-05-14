@@ -34,8 +34,6 @@ const AppHeader = ({dataChanged, setDataChanged}) => {
         }
     }
 
-    console.log(cartItems)
-
     useEffect(() => {
         getCartItems();
     }, [showCartDropdown, dataChanged]);

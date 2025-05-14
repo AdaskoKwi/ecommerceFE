@@ -6,12 +6,14 @@ import App from './App.jsx'
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage.jsx";
 import ProductPage from "./pages/productPage/ProductPage.jsx";
 import SearchPage from "./pages/searchPage/SearchPage.jsx";
+import CheckoutPage from "./pages/checkoutPage/CheckoutPage.jsx";
 
 const router = createBrowserRouter([
     { path: '/', element: <App/> },
     { path: '*', element: <NotFoundPage/> },
     { path: '/product/:id', element: <ProductPage/> },
-    { path: '/search/*', element: <SearchPage/> }
+    { path: '/search/*', element: <SearchPage/> },
+    { path: '/checkout', element: <CheckoutPage/> }
 ]);
 
 createRoot(document.getElementById('root')).render(
