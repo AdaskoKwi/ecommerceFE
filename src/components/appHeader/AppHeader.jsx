@@ -70,7 +70,7 @@ const AppHeader = ({dataChanged, setDataChanged}) => {
                     </Link>
                 </div>
 
-                <div className="header-buttons">
+                <div key={cartItems.length} className="header-buttons">
                     <button className={"favourites-button"}>🤍</button>
                     <button className={"cart-button"}
                             onMouseOver={() => setShowCartDropdown(true)}
